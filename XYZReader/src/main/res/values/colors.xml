@@ -31,7 +31,7 @@
     <color name="amber_300">#FFD54F</color>
     <color name="amber_700">#FFA000</color>
     <!--Secondary Color-->
-    <color name="lt_fuchsia">#BB1ACC</color>
-    <color name="dk_fuchsia">#A30EB2</color>
+    <color name="purple_200">#E040FB</color>
+    <color name="purple_400">#D500F9</color>
 
 </resources>

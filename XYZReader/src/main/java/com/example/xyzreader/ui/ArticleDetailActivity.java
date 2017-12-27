@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.animation.ObjectAnimator;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.LoaderManager;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -82,6 +84,39 @@ public class ArticleDetailActivity extends AppCompatActivity
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
                 //updateUpButtonPosition();
+            }
+        });
+
+        /*
+        * Awesome Suggestion.  This is a slick effect!
+        * Not much work to implement it.
+        */
+
+        mPager.setPageTransformer(true, new ViewPager.PageTransformer() {
+            @Override
+            public void transformPage(View page, float position) {
+                int pageWidth = page.getWidth();
+                ImageView dummyImage = (ImageView) page.findViewById(R.id.topImageView);
+                TextView pageBody = (TextView) page.findViewById(R.id.article_body);
+                android.support.design.widget.FloatingActionButton fab =
+                        (android.support.design.widget.FloatingActionButton) page.findViewById(R.id.share_fab);
+                TextView subtitle = (TextView) page.findViewById(R.id.article_byline);
+
+                if (position<-1){
+                    page.setAlpha(1);
+                } else if (position<=1){
+                    dummyImage.setTranslationX(-position*(pageWidth/3));
+                    pageBody.setTranslationX(position*(pageWidth*2));
+                    fab.setRotation(position*360);
+                    subtitle.setTranslationX(position*(pageWidth));
+
+                    if(position>=0)
+                        subtitle.setAlpha(1-position);
+                    else
+                        subtitle.setAlpha(1+position);
+                } else {
+                    page.setAlpha(1);
+                }
             }
         });
 

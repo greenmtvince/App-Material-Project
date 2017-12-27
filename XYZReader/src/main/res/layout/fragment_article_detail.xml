@@ -89,7 +89,7 @@
 
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
-        app:elevation="@dimen/fab_elevation"
+        android:elevation="@dimen/fab_elevation"
         app:fabSize="normal"
         app:pressedTranslationZ="@dimen/fab_press_translation_z"
         app:srcCompat="@drawable/ic_share"

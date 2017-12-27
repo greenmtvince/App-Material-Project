@@ -19,7 +19,7 @@
     <style name="XyzTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/amber_500</item>
         <item name="colorPrimaryDark">@color/amber_700</item>
-        <item name="colorAccent">@color/lt_fuchsia</item>
+        <item name="colorAccent">@color/purple_200</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
     <style name="TitleFont" parent="Theme.AppCompat.Light">

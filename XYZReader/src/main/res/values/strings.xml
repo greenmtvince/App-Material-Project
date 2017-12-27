@@ -10,6 +10,9 @@
     <string name="up">Up</string>
     <string name="transition_photo">TRANSITION_PHOTO</string>
 
+    <string name="loaded">Content Load Complete</string>
+    <string name="network_fail">No Internet Connection</string>
+
     <string name="ipsum_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in vulputate nisi. Mauris sit amet fermentum dui, sit amet lobortis tortor. Donec eleifend purus ac risus hendrerit dictum. Nam dolor tortor, efficitur eget neque a, convallis consequat massa. Sed venenatis libero sed elit efficitur tristique. Ut ornare ex ut purus lobortis iaculis. Integer faucibus elementum risus id molestie. Vivamus elit mauris, suscipit vel tincidunt mattis, egestas vitae ligula. Aliquam a tellus et tellus rhoncus blandit. Nullam sagittis nisl commodo bibendum feugiat. Phasellus luctus lectus nulla, et elementum est ultricies quis. Aenean mattis ac nisi ut malesuada. Proin dui ante, aliquam eget lectus sed, malesuada accumsan tellus. Proin aliquet tincidunt libero, a blandit eros iaculis quis. Donec vel massa posuere, malesuada erat at, facilisis mi. Duis sit amet sodales tellus.
 
 Vestibulum rhoncus feugiat mi. Phasellus sem libero, accumsan ut dui ut, hendrerit vehicula nibh. Sed nec vehicula ligula, ut feugiat elit. In scelerisque convallis sem, at eleifend orci. Phasellus nisl neque, venenatis vitae semper vitae, pulvinar posuere diam. Fusce aliquet, tortor eget iaculis ultrices, massa tellus fermentum elit, nec vulputate nulla velit non dui. Praesent venenatis est et mollis molestie. Etiam tincidunt egestas sollicitudin. Praesent velit enim, ullamcorper at purus nec, iaculis facilisis odio. Nullam tincidunt sit amet sapien non ullamcorper. Ut aliquet, tellus id tristique rutrum, dui lacus dignissim odio, sit amet euismod nibh mi sed lacus. Nullam dictum, felis ac cursus tempus, mauris libero tempus nulla, porta bibendum est diam eget lacus.

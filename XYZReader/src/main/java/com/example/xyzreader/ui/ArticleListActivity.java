@@ -9,8 +9,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -37,6 +40,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import javax.xml.datatype.Duration;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -83,6 +88,8 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+
+
     }
 
     private void refresh() {
@@ -132,6 +139,28 @@ public class ArticleListActivity extends AppCompatActivity implements
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(sglm);
+
+        String status;
+
+        if (checkNetwork(this)){
+            status=getString(R.string.loaded);
+        } else {
+            status=getString(R.string.network_fail);
+        }
+
+
+        showSnackbar(this.findViewById(R.id.coordinator_layout_list), status, Snackbar.LENGTH_LONG);
+    }
+
+    public void showSnackbar(View view, String message, int duration)
+    {
+        Snackbar.make(view, message,duration).show();
+    }
+
+    private boolean checkNetwork(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
     @Override
@@ -172,7 +201,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         }
 
         //Not required anymore
-        /*private Date parsePublishedDate() {
+        private Date parsePublishedDate() {
             try {
                 String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
                 return dateFormat.parse(date);
@@ -181,7 +210,9 @@ public class ArticleListActivity extends AppCompatActivity implements
                 Log.i(TAG, "passing today's date");
                 return new Date();
             }
-        }*/
+        }
+
+
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
@@ -194,7 +225,7 @@ public class ArticleListActivity extends AppCompatActivity implements
             //
             // I figured publish date still appears on the detail page
             //
-            /*Date publishedDate = parsePublishedDate();
+            Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
 
                 holder.subtitleView.setText(Html.fromHtml(
@@ -209,15 +240,15 @@ public class ArticleListActivity extends AppCompatActivity implements
                         outputFormat.format(publishedDate)
                         + "<br/>" + " by "
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)));
-            }*/
+            }
 
-            holder.subtitleView.setText(Html.fromHtml(
+            /*holder.subtitleView.setText(Html.fromHtml(
                     mCursor.getString(ArticleLoader.Query.AUTHOR)
-            ));
+            ));*/
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
                     ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
-            //holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
         @Override
