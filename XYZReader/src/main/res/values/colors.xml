@@ -16,10 +16,22 @@
 -->
 
 <resources>
+    <!-- Original App Colors-->
     <color name="photo_placeholder">#ccc</color>
 
     <color name="theme_primary">#04561A</color>
     <color name="theme_primary_dark">#04561A</color>
     <color name="theme_accent">#04561A</color>
     <color name="ltgray">#ffe0e0e0</color>
+
+    <!--Color palette selected from the Amber series on the Android Material design site
+        material.io.  As well as accent colors using the triad rule from the Adobe color
+        wheel color.adobe.com-->
+    <color name="amber_500">#FFC107</color>
+    <color name="amber_300">#FFD54F</color>
+    <color name="amber_700">#FFA000</color>
+    <!--Secondary Color-->
+    <color name="lt_fuchsia">#BB1ACC</color>
+    <color name="dk_fuchsia">#A30EB2</color>
+
 </resources>

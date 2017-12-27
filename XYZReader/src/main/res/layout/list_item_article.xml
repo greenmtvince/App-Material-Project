@@ -1,22 +1,91 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="160dp"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    android:foreground="?selectableItemBackground">-->
 
-    <LinearLayout
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_tile_height"
+        android:layout_marginBottom="@dimen/list_side_margin"
+        android:layout_marginTop="@dimen/list_side_margin"
+        android:layout_marginStart="@dimen/list_side_margin"
+        android:layout_marginEnd="@dimen/list_side_margin"
+        >
+
+        <com.example.xyzreader.ui.DynamicHeightNetworkImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/photo_placeholder"
+            android:adjustViewBounds="true"
+            android:transitionName="@string/transition_photo"
+            >
+
+        </com.example.xyzreader.ui.DynamicHeightNetworkImageView>
+
+        <View
+            android:id="@+id/gradient"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:alpha=".4"
+            android:background="@drawable/scrim_gradient"
+            android:layout_gravity="bottom"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            >
+
+            <TextView
+                android:id="@+id/article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="This Is the Book Title"
+                android:textSize="16sp"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/article_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:fontFamily="serif"
+                tools:text="Jan 1, 1908"
+                android:textColor="#FFF"/>
+
+            <!--<TextView
+                android:id="@+id/tv_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="by Tu Wong Fu"
+                android:textColor="#FFF"/>-->
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical">-->
 
         <!--suppress AndroidLintContentDescription -->
-        <com.example.xyzreader.ui.DynamicHeightNetworkImageView
+        <!--<com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -46,6 +115,6 @@
             android:textColor="#6000"
             android:maxLines="2"
             android:ellipsize="end" />
-    </LinearLayout>
+    </LinearLayout>-->
 
-</android.support.v7.widget.CardView>
+<!--</android.support.v7.widget.CardView>-->

@@ -16,13 +16,25 @@
 -->
 
 <resources>
+    <style name="XyzTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/amber_500</item>
+        <item name="colorPrimaryDark">@color/amber_700</item>
+        <item name="colorAccent">@color/lt_fuchsia</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+    <style name="TitleFont" parent="Theme.AppCompat.Light">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
 
+<!--
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
     </style>
 
     <style name="Theme.Bacon.Detail">
         <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
+    </style>-->
 
 </resources>
